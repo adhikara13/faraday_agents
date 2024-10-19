@@ -1,0 +1,26 @@
+agent:
+  agent_name: Arachni Scanner
+  executors:
+    arachni:
+      max_size: 65536
+      params:
+        NAME_URL:
+          base: string
+          mandatory: true
+          type: url
+        TIMEOUT:
+          base: string
+          mandatory: false
+          type: string
+      repo_name: arachni
+      repo_executor: arachni.py
+      varenvs:
+        ARACHNI_PATH: /usr/local/src/arachni/bin
+
+server:
+  api_port: '5985'
+  host: faraday_app
+  ssl: 'False'
+  ssl_cert: ''
+  ssl_ignore: 'False'
+  websocket_port: '5985'

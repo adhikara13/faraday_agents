@@ -1,0 +1,20 @@
+agent:
+  agent_name: Nikto Scanner
+  executors:
+    nikto2:
+      max_size: 65536
+      params:
+        TARGET_URL:
+          base: string
+          mandatory: true
+          type: url
+      repo_executor: nikto2.py
+      repo_name: nikto2
+      varenvs: {}
+server:
+  api_port: 5985
+  host: faraday_app
+  ssl: false
+  ssl_cert: ''
+  ssl_ignore: 'False'
+  websocket_port: 5985

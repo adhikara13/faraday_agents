@@ -1,0 +1,26 @@
+agent:
+  agent_name: Nuclei Scanner
+  executors:
+    nuclei:
+      max_size: 999999
+      params:
+        NUCLEI_EXCLUDE:
+          base: list
+          mandatory: false
+          type: list
+        NUCLEI_TARGET:
+          base: list
+          mandatory: true
+          type: list
+      repo_name: nuclei
+      repo_executor: nuclei.py
+      varenvs:
+        NUCLEI_TEMPLATES: /root/nuclei-templates
+
+server:
+  api_port: '5985'
+  host: faraday_app
+  ssl: 'False'
+  ssl_cert: ''
+  ssl_ignore: 'False'
+  websocket_port: '5985'

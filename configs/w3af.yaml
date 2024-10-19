@@ -1,0 +1,21 @@
+agent:
+  agent_name: W3AF Scanner
+  executors:
+    w3af:
+      max_size: 65536
+      params:
+        W3AF_TARGET_URL:
+          base: string
+          mandatory: true
+          type: url
+      repo_executor: w3af.py
+      repo_name: w3af
+      varenvs:
+        W3AF_PATH: /usr/local/src/w3af
+server:
+  api_port: 5985
+  host: faraday_app
+  ssl: false
+  ssl_cert: ''
+  ssl_ignore: 'False'
+  websocket_port: 5985
