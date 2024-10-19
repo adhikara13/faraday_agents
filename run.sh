@@ -1,6 +1,11 @@
 #!/bin/bash
 
-read -p "Enter the token: " TOKEN
+if [ "$1" != "--token" ] || [ -z "$2" ]; then
+  echo "Usage: $0 --token <TOKEN>"
+  exit 1
+fi
+
+TOKEN="$2"
 
 CONFIG_DIR="./configs"
 if [ ! -d "$CONFIG_DIR" ]; then
